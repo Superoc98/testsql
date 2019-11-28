@@ -88,14 +88,14 @@ public class Main {
 						try (PreparedStatement stmt = mysqlConnection.prepareStatement(query)) {
 							try (ResultSet rs = stmt.executeQuery()) {
 								while (rs.next()) {
-									int id = rs.getInt("id"+nome_tab);
+									int id = rs.getInt("id" + nome_tab);
 									String nome = rs.getString("nome");
 									System.out.println(id + "\t" + nome);
 								}
 							}
 						}
 						break;
-						
+
 					case 7:
 						System.out.print("Inserisci il nome della tabella: ");
 						nome_tab = scan.next();
@@ -103,8 +103,8 @@ public class Main {
 						try (PreparedStatement stmt = mysqlConnection.prepareStatement(query)) {
 							try (ResultSet rs = stmt.executeQuery()) {
 								while (rs.next()) {
-									int conta = rs.getInt("conta");									
-									System.out.println("Il numero delle righe è: "+conta);
+									int conta = rs.getInt("conta");
+									System.out.println("Il numero delle righe è: " + conta);
 								}
 							}
 						}
@@ -121,14 +121,4 @@ public class Main {
 				+ "Premi 5 per eliminare delle righe\n" + "Premi 6 per leggere delle righe\n"
 				+ "Premi 7 per contare delle righe\n" + "Premi 0 per uscire");
 	}
-
-//	try (PreparedStatement stmt = mysqlConnection.prepareStatement(query)) {
-//		stmt.executeUpdate(query);
-//		try (ResultSet rs = stmt.executeQuery()) {
-//			while (rs.next()) {
-//				int id = rs.getInt("id");
-//				String nome = rs.getString("nome");
-//				System.out.println(id + "\t" + nome);
-//			}
-//	}
 }
